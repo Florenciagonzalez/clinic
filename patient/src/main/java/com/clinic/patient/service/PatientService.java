@@ -66,4 +66,12 @@ public class PatientService implements IPatientService{
         repository.save(updated);
         return PatientMapper.toDTO(updated);
     }
+
+    @Override
+    public PatientDTO findByDni(String dni) {
+        Patient p = repository.findByDni(dni);
+
+        if(p == null) throw new RuntimeException("El paciente no fue encontrado");
+        return PatientMapper.toDTO(p);
+    }
 }

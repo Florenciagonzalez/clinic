@@ -10,4 +10,5 @@ public interface IPatientService {
     void delete(Long id);
     PatientDTO findById(Long id);
     PatientDTO update(PatientDTO p, Long id);
+    PatientDTO findByDni(String dni);
 }
